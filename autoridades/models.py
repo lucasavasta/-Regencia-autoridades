@@ -5,7 +5,7 @@ class Turno(models.Model):
     TURNOS_CHOICES = (
     	('M', 'Mañana'),
         ('T', 'Tarde'),
-        ('N', 'Noche'),
+        ('N', 'Noche')
     )
     turnos = models.CharField(
         max_length=1,
@@ -87,4 +87,4 @@ class Seguimiento(models.Model):
 		return '%s %s %s %s %s %s' % (self.fecha, self.profesor, self.turno, self.curso, self.division, self.asignatura)
 
 	class Meta:
-		verbose_name_plural = 'asignaturas'
+		verbose_name_plural = 'Seguimiento'

@@ -32,7 +32,7 @@ class Profesor(models.Model):
 		verbose_name_plural = "Profesores"
 
 	def __str__(self):
-		return '%s' % (self.nombre)
+		return '%s %s' % (self.nombre, self.apellidos)
 
 
 class Asignatura(models.Model):

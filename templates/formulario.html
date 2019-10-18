@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block  titulo %}Regencia{% endblock   titulo %}
+
+{% block  formulario %}
+
+<form action="http://www.aprenderaprogramar.com" method="get">   
+  <label for="fecha">Fecha: </label>
+  <input type="date" name="fecha" id="fecha">
+  <label for="profesor">Profesor: </label>
+
+<input type="text" name="profesor" id="profesor">
+
+<br/> <br/>
+
+<label for="curso">Curso: </label>
+
+<input type="text" name="curso" id="curso">
+
+<br/> <br/>
+<label for="division">Division: </label>
+<input type="division" name="division" id="division">
+
+<label for="asignatura">Asignatura: </label>
+<input type="text" name="asignatura" id="asignatura">
+
+</form>
+  
+{% endblock   formulario %}

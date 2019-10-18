@@ -28,3 +28,5 @@ class AsignaturaViewsSet(viewsets.ModelViewSet):
 class SeguimientoViewsSet(viewsets.ModelViewSet):
 	queryset = Seguimiento.objects.all()
 	serializer_class = SeguimientoSerializer
+
+

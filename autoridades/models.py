@@ -20,9 +20,10 @@ class Profesor(models.Model):
 	dni = models.PositiveSmallIntegerField(
 		primary_key=True,
 		validators=[
-			MaxValueValidator(9999),
+			MaxValueValidator(999999999),
 			MinValueValidator(1)
-		]
+		],
+		help_text='Ingrese el DNI del profesor.'
 	)
 	nombre = models.CharField(max_length=40, help_text='Ingrese el nombre del profesor.')
 	apellido = models.CharField(max_length=40, help_text='Ingrese el apellido del profesor.')
@@ -32,7 +33,7 @@ class Profesor(models.Model):
 		verbose_name_plural = "Profesores"
 
 	def __str__(self):
-		return '%s %s' % (self.nombre, self.apellidos)
+		return '%s %s' % (self.nombre, self.apellido)
 
 
 class Asignatura(models.Model):
@@ -78,6 +79,7 @@ class Seguimiento(models.Model):
 		],
 		help_text='Ingrese la division del curso correspondiente.'
 	)
+
 	asignatura = models.ForeignKey(Asignatura, on_delete=models.CASCADE, help_text = 'Elegir una asignatura')
 	ausente = models.BooleanField(blank=True, null=True)
 	tarde = models.BooleanField(blank=True, null=True)

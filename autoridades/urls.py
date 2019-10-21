@@ -4,17 +4,19 @@ from .views import (
 	TurnoViewsSet,
 	ProfesorViewsSet,
 	AsignaturaViewsSet,
-	SeguimientoViewsSet,
+	SeguimientoCreate,
 )
 
+app_name = 'autoridades'
 
 router = routers.DefaultRouter()
 router.register('turno', TurnoViewsSet)
+router.register('asignatura', AsignaturaViewsSet)
 router.register('profesor', ProfesorViewsSet)
-router.register('asignuta', AsignaturaViewsSet)
-router.register('seguimiento', SeguimientoViewsSet)
 
 
 urlpatterns = [
-	path('', include(router.urls))
+	path('', include(router.urls)),
+    path('seguimiento/create/', SeguimientoCreate.as_view(), name='seguimiento'),
 ]
+

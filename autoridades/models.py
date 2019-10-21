@@ -62,7 +62,7 @@ class Asignatura(models.Model):
 
 
 class Seguimiento(models.Model):
-	fecha = models.DateField('Fecha actual', help_text='Ingrese la fecha actual')
+	fecha = models.DateTimeField('Fecha actual', auto_now_add=True)
 	profesor = models.ForeignKey(Profesor, on_delete=models.CASCADE, help_text = 'Elegir un profesor')
 	turno = models.ForeignKey(Turno, on_delete=models.CASCADE, help_text = 'Elegir un turno')
 	curso = models.PositiveIntegerField('Curso perteneciente',

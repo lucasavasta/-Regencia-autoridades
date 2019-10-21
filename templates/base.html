@@ -9,16 +9,33 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>
-      {% block  titulo %}
-        
-      {% endblock   titulo %}
+      {% block titulo %}{% endblock titulo %}
     </title>
   </head>
   <body>
-    {% block  formulario %}
+  
+     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'autoridades:seguimiento' %}">Polls</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">{{ request.user.username }}</a>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login'%}">Ingresar</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+
+       <h1>Parte general del jefe de preceptores</h1>
+
+      {% block formulario %}
       
-    {% endblock   formulario %}
-    <h1>Parte general del jefe de preceptores</h1>
+      {% endblock formulario %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

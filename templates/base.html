@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,12 +8,13 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css" type="text/css">
 
     <title>
       {% block titulo %}{% endblock titulo %}
     </title>
   </head>
-  <body>
+  <body style = 'background-color:#FFF1DC'>
   
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -31,7 +33,7 @@
         </ul>
       </div>
 
-       <h1>Parte general del jefe de preceptores</h1>
+       <h1 align="center">Parte general del jefe de preceptores</h1>
 
       {% block formulario %}
       

@@ -1,17 +1,36 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% block titulo %}Pregunta: create{% endblock titulo %}
+{% block titulo %}Autoridades{% endblock titulo %}
 {% block formulario %}
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 mt-3">
-			<form action="" method="post">
-				{% csrf_token %}
-				{{ form|crispy }}
-				<input class="btn btn-sm btn-success" type="submit" value="Crear pregunta">
-			</form>
-			<p class="lead mt-3">(*) Campos obligatorios</p>
+	<form method="post">
+		{% csrf_token %}
+		<div class="form-row">
+		<div class="form-group col-md-6 mb-0">
+			{{ form.profesor|as_crispy_field }}
+		</div>
+		<div class="form-group col-md-6 mb-0">
+			{{ form.turno|as_crispy_field }}
 		</div>
 	</div>
+	{{ form.curso|as_crispy_field }}
+	{{ form.division|as_crispy_field }}
+	<div class="form-row">
+		<div class="form-group col-md-6 mb-0">
+			{{ form.asignatura|as_crispy_field }}
+		</div>
+		<div class="form-group col-md-4 mb-0">
+			{{ form.ausente|as_crispy_field }}
+		</div>
+		<div class="form-group col-md-2 mb-0">
+			{{ form.tarde|as_crispy_field }}
+		</div>
+		<button type="submit" class="btn btn-primary">Crear seguimiento</button>
+	</form>
+	<p class="lead mt-3">(*) Campos obligatorios</p>
+</div>
+</div>
 </div>
 {% endblock formulario %}

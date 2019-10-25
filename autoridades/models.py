@@ -1,19 +1,12 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
-class Turno(models.Model):
-    TURNOS_CHOICES = (
-    	('M', 'Mañana'),
-        ('T', 'Tarde'),
-        ('N', 'Noche')
-    )
-    turnos = models.CharField(
-        max_length=1,
-        choices=TURNOS_CHOICES
-    )
 
-    def __str__(self):
-    	return '%s' % (self.turnos)
+TURNOS_CHOICES = (
+	('mañana', 'Mañana'),
+	('tarde', 'Tarde'),
+	('noche', 'Noche'),
+)
 
 
 class Profesor(models.Model):
@@ -64,7 +57,7 @@ class Asignatura(models.Model):
 class Seguimiento(models.Model):
 	fecha = models.DateTimeField('Fecha actual', auto_now_add=True)
 	profesor = models.ForeignKey(Profesor, on_delete=models.CASCADE, help_text = 'Elegir un profesor')
-	turno = models.ForeignKey(Turno, on_delete=models.CASCADE, help_text = 'Elegir un turno')
+	turno = models.CharField(max_length=6, choices=TURNOS_CHOICES)
 	curso = models.PositiveIntegerField('Curso perteneciente',
 		validators=[
 			MaxValueValidator(6),

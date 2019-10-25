@@ -1,7 +1,6 @@
 from django.urls import include, path
 from rest_framework import routers
 from .views import (
-	TurnoViewsSet,
 	ProfesorViewsSet,
 	AsignaturaViewsSet,
 	SeguimientoCreate,
@@ -10,7 +9,6 @@ from .views import (
 app_name = 'autoridades'
 
 router = routers.DefaultRouter()
-router.register('turno', TurnoViewsSet)
 router.register('asignatura', AsignaturaViewsSet)
 router.register('profesor', ProfesorViewsSet)
 

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'crispy_forms',
     'apps.autoridades',
+    'apps.core',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -126,3 +127,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 TIME_INPUT_FORMATS=( '%H:%M', )
+
+# Login
+LOGIN_REDIRECT_URL = reverse_lazy('core:index')

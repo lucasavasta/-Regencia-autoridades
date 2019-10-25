@@ -5,21 +5,16 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView
 from .serializers import (
-	TurnoSerializer,
 	ProfesorSerializer,
 	AsignaturaSerializer,
 	SeguimientoSerializer,
 )
 from .models import (
-	Turno,
 	Profesor,
 	Asignatura,
 	Seguimiento,
 )
 
-class TurnoViewsSet(viewsets.ModelViewSet):
-	queryset = Turno.objects.all()
-	serializer_class = TurnoSerializer
 
 class ProfesorViewsSet(viewsets.ModelViewSet):
 	queryset = Profesor.objects.all()

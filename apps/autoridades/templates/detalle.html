@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block titulo %}Seguimiento{{ segui.id }} {% endblock titulo %}
+{% block formulario %}
+<div class="container">
+	<div class="row">
+		<div class="col mt-5">
+			<p><strong>Fecha:</strong> {{ segui.fecha|date:"d-m-Y" }}</p>
+			<p><strong>Profesor:</strong> {{ segui.profesor }}</p>
+			<p><strong>Turno:</strong> {{ segui.turno }}</p>
+			<p><strong>Curso:</strong> {{ segui.curso }}</p>
+			<p><strong>Division:</strong> {{ segui.division }}</p>
+			<p><strong>Asignatura:</strong> {{ segui.asignatura }}</p>
+			<p><strong>Ausente:</strong> {{ segui.ausente }}</p>
+			<p><strong>Tarde:</strong> {{ segui.tarde }}</p>
+		</div>
+	</div>
+</div>
+{% endblock formulario %}

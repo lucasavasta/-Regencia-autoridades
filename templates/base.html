@@ -16,7 +16,7 @@
   </head>
   <body style = 'background-color:#e3f2fd'>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="{% url 'core:index' %}">Admin</a>
+      <a class="navbar-brand" href="/admin">Admin</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +24,7 @@
         <ul class="navbar-nav mr-auto">
           {% if user.is_authenticated %}
           <li class="nav-item">
-              <a class="nav-link">Autoridades</a>
+              <a class="nav-link" href="{% url 'autoridades:index' %}">Autoridades</a>
           </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -43,9 +43,9 @@
       </div>
     </nav>
 
-      {% block contenido %}
+      {% block formulario %}
       
-      {% endblock contenido %}
+      {% endblock formulario %}
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

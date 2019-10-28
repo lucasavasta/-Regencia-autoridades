@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block titulo %}Seguimiento{% endblock titulo %}
+{% block formulario %}
+<div class="container">
+	<div class="row">
+		<div class="col mt-2 mb-2">
+			<h1>Lista de seguimiento</h1>
+			<a href="{% url 'autoridades:crear' %}" class="btn btn-sm btn-dark mt-2 mb-2">Crear seguimiento</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<table class="table text-center">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Fecha</th>
+						<th>Profesor</th>
+						<th>Turno</th>
+						<th>Curso</th>
+						<th>Division</th>
+						<th>Asignatura</th>
+						<th>Ausente</th>
+						<th>Tarde</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for segui in seguimientos %}
+					<tr>
+						<th>{{ segui.id }}</th>
+						<td>{{ segui.fecha }}</td>
+						<td>{{ segui.profesor }}</td>
+						<td>{{ segui.turno }}</td>
+						<td>{{ segui.curso }}</td>
+						<td>{{ segui.division }}</td>
+						<td>{{ segui.asignatura }}</td>
+						<td>{{ segui.ausente }}</td>
+						<td>{{ segui.tarde }}</td>
+						<td><a href="{% url 'autoridades:detalle' segui.id %}"><i class="far fa-eye">Detalle</i></a></td>
+						<td><a href="{% url 'autoridades:actualizar' segui.id %}"><i class="fas fa-pencil-alt">Actualizar</i></a></td>
+						<td><a href="{% url 'autoridades:eliminar' segui.id %}"><i class="far fa-trash-alt">Eliminar</i></a></td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+{% endblock formulario %}
